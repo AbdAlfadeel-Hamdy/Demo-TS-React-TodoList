@@ -1,3 +1,5 @@
+import { Todo } from "../todo.model";
+
 interface TodoListProps {
   items: { id: string; title: string }[];
 }
@@ -5,7 +7,7 @@ interface TodoListProps {
 const TodoList: React.FC<TodoListProps> = (props: TodoListProps) => {
   return (
     <ul>
-      {props.items.map((todo: { id: string; title: string }) => (
+      {props.items.map((todo: Todo) => (
         <li key={todo.id}>{todo.title}</li>
       ))}
     </ul>
